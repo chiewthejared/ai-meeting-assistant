@@ -1,0 +1,143 @@
+.zoom-recording-picker {
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin-top: 12px;
+}
+
+.zoom-recording-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.zoom-recording-header h4 {
+  margin: 0;
+  color: #1f2937;
+}
+
+.zoom-refresh-btn {
+  padding: 4px 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.zoom-refresh-btn:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.zoom-refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zoom-recording-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 8px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.zoom-recording-item {
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s;
+}
+
+.zoom-recording-item:hover {
+  background: #f9fafb;
+}
+
+.zoom-recording-item.selected {
+  background: #eef2ff;
+  border-left: 3px solid #667eea;
+}
+
+.zoom-recording-item:last-child {
+  border-bottom: none;
+}
+
+.recording-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.recording-topic {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.recording-date {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.recording-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recording-duration {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.zoom-process-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.zoom-process-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.zoom-process-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zoom-not-connected,
+.zoom-empty {
+  color: #6b7280;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.95rem;
+}
+
+.zoom-error {
+  padding: 8px 12px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+
+.zoom-loading {
+  text-align: center;
+  padding: 20px 0;
+  color: #6b7280;
+}

@@ -1,0 +1,80 @@
+.zoom-connect {
+  margin: 10px 0;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.zoom-connect.loading {
+  text-align: center;
+  color: #6b7280;
+}
+
+.zoom-connect-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0b5c87;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.zoom-connect-btn:hover:not(:disabled) {
+  background: #0a4a6e;
+  transform: translateY(-1px);
+}
+
+.zoom-connect-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zoom-connected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.zoom-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-badge.connected {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.user-id {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.zoom-disconnect-btn {
+  padding: 6px 16px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.zoom-disconnect-btn:hover {
+  background: #fecaca;
+}
