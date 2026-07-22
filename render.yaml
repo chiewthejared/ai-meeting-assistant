@@ -12,7 +12,7 @@ services:
     pythonVersion: 3.11.9
     envVars:
       - key: GEMINI_API_KEY
-        value: AQ.Ab8RN6IPO_dVGBdIaIzc_LowV_g0OOXTxEGFayY-yP1NgBFs8w
+        value: false
       - key: DATABASE_URL
         value: sqlite:///./meetings.db
       - key: ENABLE_DIARIZATION
