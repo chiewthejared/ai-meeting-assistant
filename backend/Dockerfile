@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies for Whisper and diarize
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     gcc \
@@ -10,12 +10,15 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip
-RUN pip install --no-cache-dir setuptools wheel
+# Upgrade pip and install setuptools & wheel
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# Install PyTorch and whisper separately
 RUN pip install --no-cache-dir torch==2.1.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cpu
 RUN pip install --no-cache-dir git+https://github.com/openai/whisper.git
+
+# Copy requirements and install other dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application
