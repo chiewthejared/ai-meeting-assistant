@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, Request
 from fastapi.responses import RedirectResponse, JSONResponse
 from sqlalchemy.orm import Session
-from app.services.zoom_service import ZoomService
+from app.services.zoom_services import ZoomService
 from app.database import get_db, ZoomToken
 import os
 import uuid
