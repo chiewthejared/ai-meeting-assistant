@@ -1,17 +1,11 @@
 services:
   - type: web
     name: ai-meeting-assistant-backend
-    runtime: python
+    runtime: docker
     plan: free
+    repo: https://github.com/chiewthejared/ai-meeting-assistant
     rootDir: backend
-    buildCommand: |
-      pip install --upgrade pip
-      pip install setuptools wheel
-      pip install torch==2.1.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cpu
-      pip install git+https://github.com/openai/whisper.git
-      pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    pythonVersion: 3.11.9
+    dockerfilePath: backend/Dockerfile
     envVars:
       - key: GEMINI_API_KEY
         sync: false
