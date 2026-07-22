@@ -7,6 +7,8 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install setuptools wheel
+      pip install torch==2.1.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cpu
+      pip install git+https://github.com/openai/whisper.git
       pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     pythonVersion: 3.11.9
@@ -21,3 +23,12 @@ services:
         value: tiny
       - key: ENABLE_CACHING
         value: true
+
+  - type: static
+    name: ai-meeting-assistant-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://ai-meeting-assistant-backend.onrender.com
