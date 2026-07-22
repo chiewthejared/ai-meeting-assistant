@@ -5,7 +5,7 @@ services:
     runtime: docker
     plan: free
     rootDir: backend
-    dockerfilePath: backend/Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: GEMINI_API_KEY
         sync: false
