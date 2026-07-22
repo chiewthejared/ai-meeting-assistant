@@ -18,9 +18,11 @@ services:
       - key: ENABLE_CACHING
         value: true
 
-  # Frontend - Static
-  - type: static
+  # Frontend - Static site
+  - type: web
     name: ai-meeting-assistant-frontend
+    runtime: static
+    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
