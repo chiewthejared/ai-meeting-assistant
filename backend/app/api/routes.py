@@ -1,6 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
+from sqlalchemy import text  # <-- ADD THIS IMPORT
 from app.services.transcription import TranscriptionService
 from app.services.llm_service import LLMService
 from app.services.progress import progress_tracker
@@ -149,8 +150,8 @@ async def delete_meeting(
 async def health_check(db: Session = Depends(get_db)):
     """Health check endpoint"""
     try:
-        # Test database connection
-        db.execute("SELECT 1")
+        # Test database connection using text() to avoid SQL injection warnings
+        db.execute(text("SELECT 1"))
         db_status = "healthy"
     except Exception as e:
         db_status = f"unhealthy: {str(e)}"
