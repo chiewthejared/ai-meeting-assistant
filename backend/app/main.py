@@ -21,7 +21,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:3000",
         "http://localhost:4173",
-        "https://ai-meeting-assistant-frontend-0hba.onrender.com",  # Production frontend
+        "https://ai-meeting-assistant-frontend-0hba.onrender.com",  # ← ADD THIS
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -29,7 +29,7 @@ app.add_middleware(
 )
 
 app.include_router(router, prefix="/api")
-app.include_router(zoom_router, prefix="/api")  # Add Zoom routes
+app.include_router(zoom_router, prefix="/api")
 
 @app.get("/")
 async def root():
