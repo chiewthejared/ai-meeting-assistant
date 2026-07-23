@@ -21,7 +21,8 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:3000",
         "http://localhost:4173",
-        "https://ai-meeting-assistant-frontend-0hba.onrender.com",  # ← ADD THIS
+        "https://ai-meeting-assistant-frontend-0hba.onrender.com",
+        "https://ai-meeting-assistant-backend-lkan.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
